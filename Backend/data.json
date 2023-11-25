@@ -1,0 +1,52 @@
+{
+  "register": [
+    {
+      "email": "sagardussa8004@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 1
+    },
+    {
+      "email": "poojadussa8@gmail.com",
+      "password": "1234567",
+      "confirmPassword": "1234567",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "clean code",
+      "price": "800",
+      "category": "Robert C. Martin",
+      "description": "A Handbook of Agile Software Craftsmanship 1st Edition",
+      "image": "https://m.media-amazon.com/images/I/51E2055ZGUL._SL1000_.jpg",
+      "id": 1
+    },
+    {
+      "name": "Angular Development",
+      "price": "800",
+      "category": "Sukesh Marla ",
+      "description": "Learn Angular Fundamentals, TypeScript, Components, Forms",
+      "image": "https://m.media-amazon.com/images/I/51QMjI34jLS._SY425_.jpg",
+      "id": 2
+    },
+    {
+      "name": "Java Concurrency in Practice",
+      "price": "500",
+      "category": "Goetz",
+      "description": "1e Paperback - 29 September 2016",
+      "image": "https://m.media-amazon.com/images/I/91nHBcsAMxL._SL1500_.jpg",
+      "id": 3
+    },
+    {
+      "name": "Clean Code in C#",
+      "price": "3000",
+      "category": "Jason Alls",
+      "description": "improve application performance by applying best practices",
+      "image": "https://m.media-amazon.com/images/I/41aXRMhToeL._SX342_SY445_.jpg",
+      "id": 4
+    }
+  ],
+  "cart": [],
+  "orders": []
+}

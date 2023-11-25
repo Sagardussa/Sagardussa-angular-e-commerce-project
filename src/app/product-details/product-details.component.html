@@ -1,0 +1,25 @@
+<div class="row product-details" *ngIf="productDetails">
+  <div class="col-sm-6">
+    <img  class="product-img" src="{{productDetails.image}}" alt="">
+  </div>
+  <div class="col-sm-6">
+    <div class="details">
+      <h1>{{productDetails.name}}</h1>
+      <h3>Price : {{productDetails.price | currency:'INR':'symbol-narrow':'2.0-2'}}</h3>
+    <!-- <div>Color :
+      <h5 [style.backgroundColor]="productDetails.color" class="product-color"></h5>
+    </div> -->
+    <h6>Category: {{productDetails.category}} </h6>
+    <h6>Description: {{productDetails.description}} </h6>
+    <button *ngIf="removeCart" class="p-2 mr-2 rounded bg-purple-700 text-white hover:bg-purple-900 form-button" (click)="removeToCart(productDetails.id)">Remove Cart</button>
+      <button *ngIf="!removeCart" class="p-2 mr-2 rounded bg-purple-700 text-white hover:bg-purple-900 form-button" (click)="AddToCart()">Add Cart</button>
+      <button class="p-2 rounded bg-purple-700 text-white hover:bg-purple-900 form-button">Buy Now</button>   
+    <div class="quantity-group" >
+      <button class=" p-2 mr-2 rounded bg-yellow-400 text-black hover:bg-yellow-600 form-button" (click)="handleQuantity('min')" >-</button>
+      <input type="text" class="rounded" value="{{productQuantity}}"/>
+      <button class=" p-2 rounded bg-yellow-400 text-black hover:bg-yellow-600 form-button" (click)="handleQuantity('plus')">+</button>
+    </div>
+  </div>
+</div>
+</div>
+

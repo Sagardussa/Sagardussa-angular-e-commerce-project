@@ -1,0 +1,78 @@
+
+<div class="flex h-screen justify-center">
+  <form #myForm="ngForm" (ngSubmit)="updateproductList(myForm.value)" class= "p-4 rounded lg border m-auto w-1/3">
+    <h1 class= "text-center text-xl">Add New Product</h1>
+    <p class="text-center text-green-400 ">{{showUpdatemsg}}</p>
+    <div class="my-2 w-full">
+      <label for="Name Product">Name Product</label>
+      <input type="name" 
+      placeholder="Enter Product Name" 
+      ngModel="{{ProductData?.name}}" name="name"  class="p-2 rounded w-full border" #name="ngModel"  required>
+    </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+      name filed must be valid
+    </div>
+    
+    <div class="my-2 w-full"> 
+      <label for="Price" >Price</label>
+      <input type="text"
+      ngModel="{{ProductData?.price}}" 
+       placeholder="Enter Product price" 
+       class="p-2 rounded w-full border" name="price" #price="ngModel" required>
+    </div>
+    <div *ngIf="price.invalid && (price.dirty || price.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+      price filed must be valid
+    </div>
+
+    <div class="my-2 w-full"> 
+      <label for="Category" >Author</label>
+      <input type="text" 
+      ngModel="{{ProductData?.category}}" 
+      placeholder="Enter Product Author"
+       class="p-2 rounded w-full border" name="category" #category="ngModel" required>
+    </div>
+    <div *ngIf="category.invalid && (category.dirty || category.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+      category filed must be valid
+    </div>
+
+    <!-- <div class="my-2 w-full"> 
+      <label for="Color" >Color</label>
+      <input type="text" 
+      ngModel="{{ProductData?.color}}" 
+      placeholder="Enter Product Color"
+       class="p-2 rounded w-full border" name="color" #color="ngModel" required>
+    </div>
+    <div *ngIf="color.invalid && (color.dirty || color.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+      color filed must be valid
+    </div> -->
+    
+    <div class="my-2 w-full"> 
+      <label for="Product Description" >Product Description</label>
+      <textarea type="text" 
+      ngModel="{{ProductData?.description}}" 
+      placeholder="Enter Product Description"
+       class="p-2 rounded w-full border" name="description" #description="ngModel" required></textarea>
+    </div>
+    <div *ngIf="description.invalid && (description.dirty || description.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+      description filed must be valid
+    </div>
+
+    <div class="my-2 w-full"> 
+      <label for="Product Image" >Image</label>
+      <input type="text" 
+      ngModel="{{ProductData?.image}}" 
+      placeholder="Enter Product Image URL"
+       class="p-2 rounded w-full border" name="image" #image="ngModel" required>
+    </div>
+    <div *ngIf="image.invalid && (image.dirty || image.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+      image filed must be valid
+    </div>
+
+    <div class="my-2 w-full">
+     <button type="submit" 
+     [disabled]="myForm.form.invalid"
+      class="p-2 rounded bg-yellow-700 text-white hover:bg-yellow-900 w-full">Update Product</button>
+  </div>
+  </form>
+</div>
+

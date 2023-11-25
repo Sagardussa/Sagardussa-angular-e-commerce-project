@@ -1,0 +1,32 @@
+<div class="flex h-screen justify-center">
+  <form (ngSubmit)="submit()" #myForm="ngForm" class= "p-4 rounded lg border m-auto w-1/3">
+    <h1 class= "text-center text-xl">Login</h1>
+    <p class="text-red-400">{{ErrorDisplay}}</p>
+    <div class="my-3 w-full">
+      <label for="email">Email</label>
+      <input type="email"  [(ngModel)]="form.email" id="email" placeholder="Email Address" class="p-2 rounded w-full border" name="email" #email="ngModel" required>
+    </div>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+      Email filed must be valid
+    </div>
+    <div class="my-3 w-full"> 
+      <label for="password" >Password</label>
+      <input type="password" [(ngModel)]="form.password" placeholder="Password" id="password" class="p-2 rounded w-full border" name="password" #password="ngModel" required>
+    </div>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+      Password filed must be valid
+    </div>
+    <div class="my-3 w-full">
+      <button type="submit" [disabled]="myForm.form.invalid" 
+      class="p-2 rounded bg-purple-700 text-white hover:bg-purple-900 w-full">
+      <ng-container *ngIf="isLoading()">
+        Loding...
+      </ng-container>
+      <ng-container *ngIf="!isLoading()">
+        Submit
+      </ng-container>
+    </button>
+    <a (click)="openToRegister()">Don't Have Account? Click to Register</a>
+  </div>
+  </form>
+</div>

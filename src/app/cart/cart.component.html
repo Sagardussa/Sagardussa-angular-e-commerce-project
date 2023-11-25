@@ -1,0 +1,34 @@
+
+<div class="cart-page">
+  <h1>Your Cart</h1>
+  <div class="row">
+    <div class="col-sm-8 details">
+      <ul *ngFor="let cartProduct of currentCartData">
+        <li>
+          <img src="{{cartProduct.image}}" alt="">
+        </li>
+        <li> <span>{{cartProduct.name}}</span></li>
+        <li><span>Price: {{cartProduct.price}}</span></li>
+        <li><span>quantity: {{cartProduct.quantity}} </span> </li>
+        <li><Button class="p-2 rounded bg-purple-700 text-white hover:bg-purple-900" (click)="removeTocart(cartProduct.id)">Remove to cart</Button></li>
+      </ul>
+    </div>
+    <div class="col-sm-4 summary" >
+      <h3>Summary</h3>
+      <ul>
+        <li> <span>Amount:</span><span>{{priceSummary.price}} </span></li>
+        <li> <span>Tax:</span><span>{{priceSummary.tax}}</span></li>
+        <li> <span>Delivery:</span><span>{{priceSummary.delivery}} </span></li>
+        <li> <span>Discount:</span><span>{{priceSummary.discount}} </span></li>
+        <li> <span><h4>Total</h4></span> <span><h4>{{priceSummary.total}} </h4></span></li>
+        <button (click)="checkOut()" class="p-2 my-2 rounded bg-purple-700 text-white hover:bg-purple-900 w-full">
+          CheckOut
+        </button>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+
+
